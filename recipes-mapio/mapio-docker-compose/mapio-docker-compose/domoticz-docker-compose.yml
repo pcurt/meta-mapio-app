@@ -1,0 +1,15 @@
+version: "2.1"
+
+services:
+  domoticz:
+    image: domoticz/domoticz:stable
+    container_name: domoticz
+    restart: unless-stopped
+    #devices:
+     #- /dev/ttyUSB0:/dev/ttyUSB0
+    ports:
+      - 8080:8080
+    volumes:
+      - /usr/local/domoticz:/opt/domoticz/userdata
+    environment:
+      - TZ=Europe/Paris
